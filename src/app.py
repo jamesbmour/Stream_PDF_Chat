@@ -1,7 +1,7 @@
 import os
 from typing import Optional
 import streamlit as st
-from dotenv import load_dotenv
+
 from langchain.embeddings import OpenAIEmbeddings, HuggingFaceInstructEmbeddings  # , HuggingFaceInstructEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chat_models import ChatOpenAI
@@ -18,11 +18,12 @@ import io
 # if .env file exists, load it
 
 if os.path.exists('.env'):
+    from dotenv import load_dotenv
     load_dotenv('.env')
 else:
-    os.environ["OPENAI_API_KEY"] == st.secrets["OPENAI_API_KEY"]
-    os.environ["OPENROUTER_API_KEY"] == st.secrets["OPENROUTER_API_KEY"]
-    os.environ["HUGGINGFACEHUB_API_TOKEN"] == st.secrets["HUGGINGFACEHUB_API_TOKEN"]
+os.environ["OPENAI_API_KEY"] == st.secrets["OPENAI_API_KEY"]
+os.environ["OPENROUTER_API_KEY"] == st.secrets["OPENROUTER_API_KEY"]
+os.environ["HUGGINGFACEHUB_API_TOKEN"] == st.secrets["HUGGINGFACEHUB_API_TOKEN"]
     # os.environ["TOGETHER_API_KEY"] == st.secrets["TOGETHER_API_KEY"]
     # os.environ["TOGETHER_BASE_URL"] == st.secrets["TOGETHER_BASE_URL"]
 
@@ -451,7 +452,7 @@ def list_previous_chats():
 
 
 def main():
-    load_dotenv()
+    # load_dotenv()
     st.set_page_config(page_title="Cognitive LLM",
                        page_icon=":school:")
     st.write(css, unsafe_allow_html=True)
