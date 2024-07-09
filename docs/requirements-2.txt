@@ -1,0 +1,12 @@
+langchain
+python-dotenv
+streamlit
+openai
+faiss-cpu
+altair
+tiktoken
+huggingface-hub
+
+# uncomment to use instructor embeddings
+InstructorEmbeddings
+sentence-transformers #==2.2.2
