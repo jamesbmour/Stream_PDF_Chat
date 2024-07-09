@@ -19,6 +19,17 @@ import io
 
 if os.path.exists('.env'):
     load_dotenv('.env')
+else:
+    os.environ["OPENAI_API_KEY"] == st.secrets["OPENAI_API_KEY"]
+    os.environ["OPENROUTER_API_KEY"] == st.secrets["OPENROUTER_API_KEY"]
+    os.environ["HUGGINGFACEHUB_API_TOKEN"] == st.secrets["HUGGINGFACEHUB_API_TOKEN"]
+    # os.environ["TOGETHER_API_KEY"] == st.secrets["TOGETHER_API_KEY"]
+    # os.environ["TOGETHER_BASE_URL"] == st.secrets["TOGETHER_BASE_URL"]
+
+
+
+    # And the root-level secrets are also accessible as environment variables:
+
 
 
 openai_api_key = os.getenv("OPENAI_API_KEY")
