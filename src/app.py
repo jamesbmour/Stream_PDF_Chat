@@ -1,7 +1,7 @@
 import os
 from typing import Optional
 import streamlit as st
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 from langchain.embeddings import OpenAIEmbeddings, HuggingFaceInstructEmbeddings  # , HuggingFaceInstructEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chat_models import ChatOpenAI
@@ -15,8 +15,12 @@ from utils import debug, get_pdf_text, get_available_models, get_file_text, init
     clear_chat, setup_tabs
 from constants import *
 import io
+# if .env file exists, load it
 
-# load_dotenv()
+if os.path.exists('.env'):
+    load_dotenv('.env')
+
+
 openai_api_key = os.getenv("OPENAI_API_KEY")
 openrouter_api_key = os.getenv("OPENROUTER_API_KEY")
 
