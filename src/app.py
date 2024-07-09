@@ -1,7 +1,7 @@
 import os
 from typing import Optional
 import streamlit as st
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from langchain.embeddings import OpenAIEmbeddings, HuggingFaceInstructEmbeddings  # , HuggingFaceInstructEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chat_models import ChatOpenAI
@@ -16,7 +16,7 @@ from utils import debug, get_pdf_text, get_available_models, get_file_text, init
 from constants import *
 import io
 
-load_dotenv()
+# load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
 openrouter_api_key = os.getenv("OPENROUTER_API_KEY")
 
